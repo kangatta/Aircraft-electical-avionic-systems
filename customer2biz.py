@@ -5,11 +5,11 @@ import mpesa_keys
 from access_token import generate_access_token
 
 
-#generating access-token
+
 the_token=generate_access_token()
-
-
 def register_c2b_url():
+    #generating access-token
+
     api_url=" https://sandbox.safaricom.co.ke/mpesa/c2b/v1/registerurl"
 
     headers = {

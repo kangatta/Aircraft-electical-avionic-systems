@@ -6,28 +6,17 @@ from requests.auth import HTTPBasicAuth
 #import the keys
 import mpesa_keys
 from access_token import generate_access_token
+from encode import build_pwd
+from random_functions import timestamp_conversion
 #date and time
 from datetime import datetime
 #for encoding pwd
 import base64
 
-#print(datetime.now())
-unformatted_time=datetime.now()
-#eliminate dashes n spaces in the timestamp
-#strftime--string formatted time
-#%Y %m %d %H %M %S
-formatted_time=unformatted_time.strftime("%Y%m%d%H%M%S")
-    ## ie: 20220824150922
-#print(formatted_time,'time now')
-#fx to create timestamp
-
-#made up of the business short code(business_shortCode) + stringformattedtime
-data_to_encode=mpesa_keys.business_shortCode + mpesa_keys.lipa_na_mpesa_passkey + formatted_time
-encoded_password=base64.b64encode(data_to_encode.encode())#we need a bytes-like object, the .encode() encodes it to a utf-8
-#print(encoded_string)#output: b'MjAyMjA4MjQxNjE4NTU='..is in binary/bytes  '    '
-
-decoded_password=encoded_password.decode('utf-8')
-#print(decoded_password)#output:MjAyMjA4MjQxNjI1NTc=
+#formatting the date
+formatted_time=timestamp_conversion()
+#encoding and decoding pwd
+decoded_password=build_pwd(formatted_time)
 
 #generating access-token
 the_token=generate_access_token()
