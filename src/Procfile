@@ -1,1 +1,2 @@
-web:gunicorn backend.src.avionicSystems.wsgi --log-file -
+
+web: gunicorn src.avionicSystems:application --log-file -
