@@ -77,8 +77,12 @@ WSGI_APPLICATION = 'avionicSystems.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'avionicSystems',
+        'USER':'postgres',
+        'PASSWORD':'AlphaPredator1',
+        'HOST':'localhost',
+        'port': '5432', 
     }
 }
 
@@ -122,7 +126,7 @@ MEDIA_URL = "/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
 STATIC_URL = "/static/"
-STATICFILES_DIRS = [os.path.join(BASE_DIR, "staticfiles")]
+STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
 STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static-local")
 
 # Default primary key field type
