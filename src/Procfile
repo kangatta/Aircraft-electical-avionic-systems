@@ -1,2 +1,2 @@
 
-web: gunicorn avionicSystems.wsgi --log-file -
+web: gunicorn avionicSystems:application --log-file -
