@@ -1,1 +1,2 @@
-web:gunicorn avionicSystems.wsgi
+web: gunicorn avionicSystems.wsgi
+web: python manage.py runserver
