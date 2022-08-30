@@ -5,8 +5,8 @@ AWS_FILE_EXPIRE = 200
 AWS_PRELOAD_METADATA = True
 AWS_QUERYSTRING_AUTH = True
 
-DEFAULT_FILE_STORAGE = 'avionicssystems.aws.utils.MediaRootS3BotoStorage'
-STATICFILES_STORAGE = 'avionicssystems.aws.utils.StaticRootS3BotoStorage'
+DEFAULT_FILE_STORAGE = 'avionicsSystems.aws.utils.MediaRootS3BotoStorage'
+STATICFILES_STORAGE = 'avionicsSystems.aws.utils.StaticRootS3BotoStorage'
 AWS_STORAGE_BUCKET_NAME = 'avionicssystems-bucket>'
 S3DIRECT_REGION = 'eu-west-2'
 S3_URL = '//%s.s3.amazonaws.com/' % AWS_STORAGE_BUCKET_NAME
